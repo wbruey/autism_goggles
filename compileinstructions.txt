@@ -1,0 +1,1 @@
+g++ -o hello.exe hellofunc.cpp helloworld.cpp
