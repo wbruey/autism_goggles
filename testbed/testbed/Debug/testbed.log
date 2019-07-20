@@ -1,0 +1,5 @@
+﻿  hellofunc.cpp
+C:\Users\willb\git_repos\autism_goggles\testbed\testbed\hellofunc.cpp(15,17): warning C4305:  'initializing': truncation from 'double' to 'float'
+C:\Users\willb\git_repos\autism_goggles\testbed\testbed\hellofunc.cpp(16,17): warning C4305:  'initializing': truncation from 'double' to 'float'
+C:\Users\willb\git_repos\autism_goggles\testbed\testbed\hellofunc.cpp(17,17): warning C4305:  'initializing': truncation from 'double' to 'float'
+  testbed.vcxproj -> C:\Users\willb\git_repos\autism_goggles\testbed\Debug\testbed.exe
