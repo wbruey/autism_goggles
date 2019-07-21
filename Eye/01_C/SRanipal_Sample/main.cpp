@@ -28,8 +28,19 @@ void streaming() {
 	unsigned long int gaze_time = 0;
 	unsigned int frame_seq = 0;
 	unsigned __int64 now = 0;
+	unsigned __int64 movie_duration = 105000;
+	unsigned __int64 start_time = 0;
+	start_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+	unsigned __int64 time_so_far = 0;
 
 	while (looping) {
+		now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+		time_so_far = now - start_time;
+		
+		if (time_so_far > movie_duration) {
+			looping = false;
+		}
+		
 		if (EnableEye) {
 			int result = ViveSR::anipal::Eye::GetEyeData(&eye_data);
 			if (result == ViveSR::Error::WORK) {
@@ -37,7 +48,6 @@ void streaming() {
 				gaze_time = eye_data.timestamp;
 				frame_seq = eye_data.frame_sequence;
 				//printf("[Eye] Gaze: %.2f %.2f %.2f\n", gaze[0], gaze[1], gaze[2]);
-				now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 				std::ostringstream eye_sample;
 				
 				eye_sample << "eye_gaze,"
@@ -96,8 +106,8 @@ int main() {
 		}
 		else if (str == '3') {
 			int i = 0;
-			printf("start C:\\ffmpeg\\bin\\ffplay C:\\ffmpeg\\bin\\snl.avi -fs");
-			i = system("start C:\\ffmpeg\\bin\\ffplay C:\\ffmpeg\\bin\\snl.avi -fs");
+			printf("start C:\\ffmpeg\\bin\\ffplay C:\\ffmpeg\\bin\\output.mp4 -fs");
+			i = system("start C:\\ffmpeg\\bin\\ffplay C:\\ffmpeg\\bin\\output.mp4 -fs");
 			looping = true;
 			t = new std::thread(streaming);
 		}
