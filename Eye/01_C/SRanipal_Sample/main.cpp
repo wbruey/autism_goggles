@@ -28,7 +28,7 @@ void streaming() {
 	unsigned long int gaze_time = 0;
 	unsigned int frame_seq = 0;
 	unsigned __int64 now = 0;
-	unsigned __int64 movie_duration = 105000;
+	unsigned __int64 movie_duration = 9000;
 	unsigned __int64 start_time = 0;
 	start_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 	unsigned __int64 time_so_far = 0;

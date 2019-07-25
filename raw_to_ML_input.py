@@ -8,7 +8,7 @@ import numpy as np
 import time
 import math
 
-frame_rate=29.97
+frame_rate=23.98
 video_rez_x=1280
 video_rez_y=720
 
@@ -30,7 +30,7 @@ frame_nums_raw=[]
 blinking=[]
 first_row=True
 
-with open('test1.csv','r') as csvfile:
+with open('eye_gaze_data.csv','r') as csvfile:
 
     gaze_reader=csv.reader(csvfile)
     
