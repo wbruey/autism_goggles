@@ -107,16 +107,32 @@ void my_callback() {
 }
 
 void interrogate() {
+
 	ViveSR::anipal::Eye::EyeData eye_data;
 	if (EnableEye) {
 		int result = ViveSR::anipal::Eye::GetEyeData(&eye_data);
 		if (result == ViveSR::Error::WORK) {
-			bool calibrated;
-			int result_two = ViveSR::anipal::Eye::IsUserNeedCalibration(&calibrated);
-			std::cout << "Calibration:  " << calibrated;
-			ViveSR::anipal::Eye::LaunchEyeCalibration(my_callback);
-			result_two = ViveSR::anipal::Eye::IsUserNeedCalibration(&calibrated);
-			std::cout << "Calibration:  " << calibrated;
+			
+			eye_data.verbose_data.left.gaze_direction_normalized.elem_
+
+			bool uncalibrated=1;
+			std::cout << "\nNeeds Calibration:  " << uncalibrated << "\n";
+			
+			int result_two = ViveSR::anipal::Eye::IsUserNeedCalibration(&uncalibrated);
+			if (result_two == ViveSR::Error::WORK) {
+				printf("\nit workd\n");
+			}
+			std::cout << "Needs Calibration:  " << uncalibrated <<"\n";
+			
+			uncalibrated = 1;
+			ViveSR::anipal::Eye::LaunchEyeCalibration(&my_callback);
+			
+			result_two = ViveSR::anipal::Eye::IsUserNeedCalibration(&uncalibrated);
+			if (result_two == ViveSR::Error::WORK) {
+				printf("it workd\n");
+			}
+			std::cout << "Needs Calibration:  " << uncalibrated <<"\n";
+
 		}
 	}
 }
