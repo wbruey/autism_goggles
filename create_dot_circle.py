@@ -6,7 +6,7 @@ import numpy as np
 import time
 import math
 
-
+video_dict='C:\\ffmpeg\\bin\\'
 foreground = Image.open("blue_dot.jpg")
 xs=[]
 ys=[]
