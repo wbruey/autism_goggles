@@ -20,15 +20,16 @@ using namespace ViveSR;
 std::thread *t = nullptr;
 bool EnableEye = false;
 bool looping = false;
+bool test_running = true;
 void streaming() {
 	ViveSR::anipal::Eye::EyeData eye_data;
 	int result = ViveSR::Error::WORK;
 	std::ofstream myfile;
-	myfile.open("eye_gaze_data.csv");
+	myfile.open("C:\\Users\\willb\\git_repos\\autism_goggles\\eye_gaze_data.csv");
 	unsigned long int gaze_time = 0;
 	unsigned int frame_seq = 0;
 	unsigned __int64 now = 0;
-	unsigned __int64 movie_duration = 12000;
+	unsigned __int64 movie_duration = 23200;
 	unsigned __int64 start_time = 0;
 	start_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 	unsigned __int64 time_so_far = 0;
@@ -39,6 +40,14 @@ void streaming() {
 		
 		if (time_so_far > movie_duration) {
 			looping = false;
+			test_running = false;
+			exit(0);
+		}
+
+		while (time_so_far > 0 && time_so_far < 500 ) {
+			now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+			time_so_far = now - start_time;
+			printf("time: %d\n", time_so_far);
 		}
 		
 		if (EnableEye) {
@@ -76,6 +85,8 @@ void streaming() {
 					<< combined_gaze[1]
 					<< ","
 					<< combined_gaze[2]
+					<< ","
+					<< time_so_far
 					<< "\n";
 
 				std::string str = eye_sample.str();
@@ -103,7 +114,7 @@ int main() {
 	}
 	char str = 0;
 	int error, handle = NULL;
-	while (true) {
+	while (test_running) {
 		if (str != '\n' && str != EOF) { printf("\nwait for key event :"); }
 		str = getchar();
 		if (str == '`') break;
@@ -120,10 +131,11 @@ int main() {
 		}
 		else if (str == '3') {
 			int i = 0;
-			printf("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\dotcircle.mp4 -fs");
-			i = system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\dotcircle.mp4 -fs");
+			printf("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\dotstatic.mp4 -fs -autoexit");
+			i = system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\dotstatic.mp4 -fs -autoexit");
 			looping = true;
 			t = new std::thread(streaming);
+			test_running = false;
 		}
 		else if (str == '4') {
 			if (t == nullptr) continue;

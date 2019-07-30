@@ -6,7 +6,7 @@ import numpy as np
 import time
 import math
 
-total_frames=300
+total_frames=550
 
 left_foreground = Image.open("red_dot.jpg")
 right_foreground = Image.open("orange_dot.jpg")

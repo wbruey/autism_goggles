@@ -8,25 +8,26 @@ import numpy as np
 import time
 import math
 
-frame_rate=23.98
+
+##CONSTANTS THAT DEFINE THE VIDE0 AND EYE GAZE PARAMS##################
+frame_rate=23.975
 video_rez_x=1280
 video_rez_y=720
 
 theta_max_angle=.535
 theta_min_angle=-.574
 
-
 phi_max_angle=.222
 phi_min_angle=-.392
 
 input_raw_eye_data_filename='eye_gaze_data.csv'
 output_pixel_coordinate_data_filename='video_gazed.csv'
+########################################################################
 
-theta_range=theta_max_angle-theta_min_angle
+
+theta_range=theta_max_angle-theta_min_angle  
 phi_range=phi_max_angle-phi_min_angle
-
 times=[]
-
 left_xs_raw=[]
 left_ys_raw=[]
 left_zs_raw=[]
@@ -37,11 +38,10 @@ combined_xs_raw=[]
 combined_ys_raw=[]
 combined_zs_raw=[]
 
-
 frame_nums_raw=[]
 blinking=[]
 first_row=True
-
+   
 with open(input_raw_eye_data_filename,'r') as csvfile:
 
     gaze_reader=csv.reader(csvfile)
