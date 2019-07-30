@@ -12,8 +12,8 @@ xs=[]
 ys=[]
 
 for t in range(0,300):
-    xs.append(350*math.cos(t*2*3.14159/300)+600)
-    ys.append(250*math.sin(t*2*3.14159/300)+350)
+    xs.append(35*math.cos(t*2*3.14159/300)+600)
+    ys.append(25*math.sin(t*2*3.14159/300)+350)
     
 for frame in range(0,300):
     with Image.open('blank.jpg') as background:
