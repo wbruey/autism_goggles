@@ -100,11 +100,34 @@ void streaming() {
 	myfile.close();
 }
 
+
+void my_callback() {
+	printf("great job will\n");
+
+}
+
+void interrogate() {
+	ViveSR::anipal::Eye::EyeData eye_data;
+	if (EnableEye) {
+		int result = ViveSR::anipal::Eye::GetEyeData(&eye_data);
+		if (result == ViveSR::Error::WORK) {
+			bool calibrated;
+			int result_two = ViveSR::anipal::Eye::IsUserNeedCalibration(&calibrated);
+			std::cout << "Calibration:  " << calibrated;
+			ViveSR::anipal::Eye::LaunchEyeCalibration(my_callback);
+			result_two = ViveSR::anipal::Eye::IsUserNeedCalibration(&calibrated);
+			std::cout << "Calibration:  " << calibrated;
+		}
+	}
+}
+
+
 int main() {
 	printf("SRanipal Sample\n\nPlease refer the below hotkey list to try apis.\n");
 	printf("[`] Exit this program.\n");
 	printf("[0] Release all anipal engines.\n");
 	printf("[1] Initial Eye engine\n");
+	printf("[2] Interrogate Eye engine\n");
 	printf("[3] Launch a thread to query data.\n");
 	printf("[4] Stop the thread.\n");
 	
@@ -128,6 +151,9 @@ int main() {
 			if (error == ViveSR::Error::WORK) { EnableEye = true; printf("Successfully initialize Eye engine.\n"); }
 			else if (error == ViveSR::Error::RUNTIME_NOT_FOUND) printf("please follows SRanipal SDK guide to install SR_Runtime first\n");
 			else printf("Fail to initialize Eye engine. please refer the code %d of ViveSR::Error.\n", error);
+		}
+		else if (str == '2') {
+			t = new std::thread(interrogate);
 		}
 		else if (str == '3') {
 			int i = 0;
