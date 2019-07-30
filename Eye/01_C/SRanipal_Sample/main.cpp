@@ -24,7 +24,7 @@ void streaming() {
 	ViveSR::anipal::Eye::EyeData eye_data;
 	int result = ViveSR::Error::WORK;
 	std::ofstream myfile;
-	myfile.open("eye_gaze_data.txt");
+	myfile.open("eye_gaze_data.csv");
 	unsigned long int gaze_time = 0;
 	unsigned int frame_seq = 0;
 	unsigned __int64 now = 0;
@@ -44,7 +44,9 @@ void streaming() {
 		if (EnableEye) {
 			int result = ViveSR::anipal::Eye::GetEyeData(&eye_data);
 			if (result == ViveSR::Error::WORK) {
-				float *gaze = eye_data.verbose_data.left.gaze_direction_normalized.elem_;
+				float *left_gaze = eye_data.verbose_data.left.gaze_direction_normalized.elem_;
+				float *right_gaze = eye_data.verbose_data.right.gaze_direction_normalized.elem_;
+				float *combined_gaze = eye_data.verbose_data.combined.eye_data.gaze_direction_normalized.elem_;
 				gaze_time = eye_data.timestamp;
 				frame_seq = eye_data.frame_sequence;
 				//printf("[Eye] Gaze: %.2f %.2f %.2f\n", gaze[0], gaze[1], gaze[2]);
@@ -57,11 +59,23 @@ void streaming() {
 					<< ","
 					<< gaze_time
 					<< ","
-					<< gaze[0]
+					<< left_gaze[0]
 					<< ","
-					<< gaze[1]
+					<< left_gaze[1]
 					<< ","
-					<< gaze[2]
+					<< left_gaze[2]
+					<< ","
+					<< right_gaze[0]
+					<< ","
+					<< right_gaze[1]
+					<< ","
+					<< right_gaze[2]
+					<< ","
+					<< combined_gaze[0]
+					<< ","
+					<< combined_gaze[1]
+					<< ","
+					<< combined_gaze[2]
 					<< "\n";
 
 				std::string str = eye_sample.str();
