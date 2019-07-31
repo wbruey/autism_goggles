@@ -6,7 +6,7 @@ import numpy as np
 import time
 import math
 
-total_frames=550
+total_frames=2626
 width_of_dot=10
 
 left_foreground = Image.open("red_dot.jpg")
@@ -34,8 +34,8 @@ for frame in range(1,total_frames):
     print(frame)
     with Image.open('thumb'+str(frame)+'.jpg') as background:
         try:
-            background.paste(left_foreground, (int(left_xs[frame-1])-int(width_of_dot/2), int(left_ys[frame-1])-int(width_of_dot/2)))
-            background.paste(right_foreground, (int(right_xs[frame-1])-int(width_of_dot/2), int(right_ys[frame-1])-int(width_of_dot/2)))
+        #    background.paste(left_foreground, (int(left_xs[frame-1])-int(width_of_dot/2), int(left_ys[frame-1])-int(width_of_dot/2)))
+        #    background.paste(right_foreground, (int(right_xs[frame-1])-int(width_of_dot/2), int(right_ys[frame-1])-int(width_of_dot/2)))
             background.paste(combined_foreground, (int(combined_xs[frame-1])-int(width_of_dot/2), int(combined_ys[frame-1])-int(width_of_dot/2)))
 
             background.save('thumb'+str(frame)+'.jpg')

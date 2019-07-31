@@ -14,17 +14,20 @@ frame_rate=23.975
 video_rez_x=1280
 video_rez_y=720
 
-theta_max_angle=.535
-theta_min_angle=-.574
+theta_max_angle=0.6  #0.544907   #.535  (left side of screen)
+theta_min_angle=-0.616058  #-.574  (right side of screen)
+theta_zero_angle=-0.00848389
 
-phi_max_angle=.222
-phi_min_angle=-.392
+phi_max_angle=0.3#0.269867 #.222    (top of screen)
+phi_min_angle=-0.405853  #-.392  (bottom of screen)
+phi_zero_angle=-0.0565491
 
 input_raw_eye_data_filename='eye_gaze_data.csv'
 output_pixel_coordinate_data_filename='video_gazed.csv'
 ########################################################################
 
-
+screen_distance=(phi_max_angle-phi_zero_angle)/math.atan(phi_max_angle)
+print(screen_distance)
 theta_range=theta_max_angle-theta_min_angle  
 phi_range=phi_max_angle-phi_min_angle
 times=[]
