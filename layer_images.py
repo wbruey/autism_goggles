@@ -6,7 +6,7 @@ import numpy as np
 import time
 import math
 
-total_frames=2626
+total_frames=550
 width_of_dot=10
 
 left_foreground = Image.open("red_dot.jpg")
