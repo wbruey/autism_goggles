@@ -7,7 +7,10 @@ import pandas as pd
 import numpy as np
 import time
 import math
-
+from shutil import copyfile
+from statistics import mean
+import numpy as np
+import pickle
 
 ##CONSTANTS THAT DEFINE THE VIDE0 AND EYE GAZE PARAMS##################
 frame_rate=23.975
@@ -24,7 +27,17 @@ phi_zero_angle=-0.0565491
 
 input_raw_eye_data_filename='eye_gaze_data.csv'
 output_pixel_coordinate_data_filename='video_gazed.csv'
+
 ########################################################################
+user_name=input("please type unique user name: ")
+with open(user_name+'_cal_params.pkl','rb') as f:  # Python 3: open(..., 'rb')
+    cal_params = pickle.load(f)
+    
+rho_picture=cal_params[0]#1034#1078.591 
+height_picture=cal_params[1]#302#283.642
+rho_pic_theta_pic=cal_params[2]#646#648.095
+output_pixel_coordinate_data_filename=user_name+'_'+output_pixel_coordinate_data_filename
+
 
 screen_distance=(phi_max_angle-phi_zero_angle)/math.atan(phi_max_angle)
 print(screen_distance)
@@ -180,42 +193,49 @@ for row in range(0,len(frame_nums_raw)):
 
 #now do the conversion from angle to pixel location
 
+
 with open(output_pixel_coordinate_data_filename, 'w') as csvfile:
     spamwriter=csv.writer(csvfile,lineterminator='\n')
     for frame in range(0,len(frame_nums)):
 
-        left_xs[frame]=(theta_max_angle-left_xs[frame])*video_rez_x/theta_range
+        #left_xs[frame]=(theta_max_angle-left_xs[frame])*video_rez_x/theta_range
+        left_xs[frame]=rho_pic_theta_pic-rho_picture*left_xs[frame]
         if left_xs[frame]<0:
             left_xs[frame]=0
         if left_xs[frame]>video_rez_x:
             left_xs[frame]=video_rez_x
            
-        left_ys[frame]=(phi_max_angle-left_ys[frame])*video_rez_y/phi_range  #### NEED TO ADD TANGENT HERE!!!!!!!!!!!!!!!!!!!!!
+        #left_ys[frame]=(phi_max_angle-left_ys[frame])*video_rez_y/phi_range  #### NEED TO ADD TANGENT HERE!!!!!!!!!!!!!!!!!!!!!
+        left_ys[frame]=height_picture-rho_picture*math.tan(left_ys[frame])
         if left_ys[frame]<0:
             left_ys[frame]=0
         if left_ys[frame]>video_rez_y:
             left_ys[frame]=video_rez_y
         
         
-        right_xs[frame]=(theta_max_angle-right_xs[frame])*video_rez_x/theta_range
+        #right_xs[frame]=(theta_max_angle-right_xs[frame])*video_rez_x/theta_range
+        right_xs[frame]=rho_pic_theta_pic-rho_picture*right_xs[frame]
         if right_xs[frame]<0:
             right_xs[frame]=0
         if right_xs[frame]>video_rez_x:
             right_xs[frame]=video_rez_x
            
-        right_ys[frame]=(phi_max_angle-right_ys[frame])*video_rez_y/phi_range  #### NEED TO ADD TANGENT HERE!!!!!!!!!!!!!!!!!!!!!
+        #right_ys[frame]=(phi_max_angle-right_ys[frame])*video_rez_y/phi_range  #### NEED TO ADD TANGENT HERE!!!!!!!!!!!!!!!!!!!!!
+        right_ys[frame]=height_picture-rho_picture*math.tan(right_ys[frame])
         if right_ys[frame]<0:
             right_ys[frame]=0
         if right_ys[frame]>video_rez_y:
             right_ys[frame]=video_rez_y
 
-        combined_xs[frame]=(theta_max_angle-combined_xs[frame])*video_rez_x/theta_range
+        #combined_xs[frame]=(theta_max_angle-combined_xs[frame])*video_rez_x/theta_range
+        combined_xs[frame]=rho_pic_theta_pic-rho_picture*combined_xs[frame]
         if combined_xs[frame]<0:
             combined_xs[frame]=0
         if combined_xs[frame]>video_rez_x:
             combined_xs[frame]=video_rez_x
            
-        combined_ys[frame]=(phi_max_angle-combined_ys[frame])*video_rez_y/phi_range  #### NEED TO ADD TANGENT HERE!!!!!!!!!!!!!!!!!!!!!
+        #combined_ys[frame]=(phi_max_angle-combined_ys[frame])*video_rez_y/phi_range  #### NEED TO ADD TANGENT HERE!!!!!!!!!!!!!!!!!!!!!
+        combined_ys[frame]=height_picture-rho_picture*math.tan(combined_ys[frame])
         if combined_ys[frame]<0:
             combined_ys[frame]=0
         if combined_ys[frame]>video_rez_y:

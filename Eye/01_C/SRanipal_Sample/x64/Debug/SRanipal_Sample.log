@@ -1,11 +1,10 @@
 ﻿  main.cpp
 C:\Users\willb\git_repos\autism_goggles\Eye\01_C\include\SRanipal_EyeDataType.h(142,32): warning C4334:  '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
 C:\Users\willb\git_repos\autism_goggles\Eye\01_C\include\SRanipal_EyeDataType.h(184,5): warning C4091:  'typedef ': ignored on left of 'ViveSR::anipal::Eye::CombinedEyeData' when no variable is declared
-C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(51,11): warning C4477:  'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
-C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(51,11): message :  consider using '%lld' in the format string
-C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(51,11): message :  consider using '%Id' in the format string
-C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(51,11): message :  consider using '%I64d' in the format string
-  LINK : C:\Users\willb\git_repos\autism_goggles\Eye\01_C\x64\Debug\SRanipal_Sample.exe not found or not built by the last incremental link; performing full link
+C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(52,11): warning C4477:  'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(52,11): message :  consider using '%lld' in the format string
+C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(52,11): message :  consider using '%Id' in the format string
+C:\Users\willb\git_repos\autism_goggles\Eye\01_C\SRanipal_Sample\main.cpp(52,11): message :  consider using '%I64d' in the format string
   SRanipal_Sample.vcxproj -> C:\Users\willb\git_repos\autism_goggles\Eye\01_C\x64\Debug\SRanipal_Sample.exe
   ..\bin\libHTC_License.dll
   ..\bin\nanomsg.dll
