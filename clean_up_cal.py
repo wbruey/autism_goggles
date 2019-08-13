@@ -64,4 +64,9 @@ try:
     os.remove('cal_error_data.csv')
 except:
     print('unable to copy cal error data')
-    
+
+try:
+    copyfile('cal_params.pkl',path+'\\'+user_name+'_cal_params.pkl')
+    print('copied cal params')
+except:
+    print('unable to copy cal params')
