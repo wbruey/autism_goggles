@@ -22,7 +22,7 @@ input_raw_eye_data_filename='eye_gaze_data_cal.csv'
 ########################################################################
 
 #copyfile(input_raw_eye_data_filename,user_name+'_'+input_raw_eye_data_filename)
-output_angle_frame_filename='frame_angles.csv'
+output_angle_frame_filename='frame_angles_cal.csv'
 
 times=[]
 left_xs_raw=[]

@@ -1,3 +1,7 @@
+python analyze_cal.py
+
+TIMEOUT 1
+
 python raw_to_ML_input_cal.py
 
 TIMEOUT 1
@@ -22,3 +26,5 @@ REM C:\ffmpeg\bin\ffmpeg -i man_soundless.mp4 -i man_audio.mp3 man_dot_done.mp4
 REM TIMEOUT 1
 
 del thumb*
+
+python clean_up.py
