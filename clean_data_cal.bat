@@ -27,4 +27,4 @@ REM TIMEOUT 1
 
 del thumb*
 
-python clean_up.py
+python clean_up_cal.py
