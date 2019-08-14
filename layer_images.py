@@ -6,8 +6,8 @@ import numpy as np
 import time
 import math
 
-total_frames=550 #dot static
-#total_frames=2626 #i love you man
+#total_frames=550 #dot static
+total_frames=2626 #i love you man
 #total_frames=350  #dot circle
 
 width_of_dot=10

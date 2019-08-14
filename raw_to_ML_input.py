@@ -29,18 +29,15 @@ input_raw_eye_data_filename='eye_gaze_data.csv'
 output_pixel_coordinate_data_filename='video_gazed.csv'
 
 ########################################################################
-user_name=input("please type unique user name: ")
-with open(user_name+'_cal_params.pkl','rb') as f:  # Python 3: open(..., 'rb')
+with open('cal_params.pkl','rb') as f:  # Python 3: open(..., 'rb')
     cal_params = pickle.load(f)
     
 rho_picture=cal_params[0]#1034#1078.591 
 height_picture=cal_params[1]#302#283.642
 rho_pic_theta_pic=cal_params[2]#646#648.095
-output_pixel_coordinate_data_filename=user_name+'_'+output_pixel_coordinate_data_filename
 
 
-screen_distance=(phi_max_angle-phi_zero_angle)/math.atan(phi_max_angle)
-print(screen_distance)
+
 theta_range=theta_max_angle-theta_min_angle  
 phi_range=phi_max_angle-phi_min_angle
 times=[]
