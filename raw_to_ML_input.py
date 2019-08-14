@@ -84,7 +84,7 @@ with open(input_raw_eye_data_filename,'r') as csvfile:
             times.append(time_of_frame)
             
             #if there is a blink use the previous value
-            if row[4]==0 or row[7]==0:
+            if float(row[4])==0 or float(row[7])==0 or float(row[10])==-1:
                 
                 left_xs_raw.append(left_xs_raw[-1])
                 left_ys_raw.append(left_ys_raw[-1])
@@ -97,6 +97,8 @@ with open(input_raw_eye_data_filename,'r') as csvfile:
                 combined_xs_raw.append(combined_xs_raw[-1])
                 combined_ys_raw.append(combined_ys_raw[-1])
                 combined_zs_raw.append(combined_zs_raw[-1])
+                
+                
                 
                 blinking.append(1)
             else:
