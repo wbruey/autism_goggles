@@ -56,3 +56,10 @@ try:
     print('deleted soundless version')
 except:
     print('unable to delete soundless version')
+    
+try:
+    copyfile('blink_profile.csv',path+'\\'+user_name+'_blink_profile.csv')
+    print('copied blink profile')
+    os.remove('blink_profile.csv')
+except:
+    print('unable to cal blink profile')

@@ -190,7 +190,19 @@ for row in range(0,len(frame_nums_raw)):
         combined_zs_sum=combined_zs_sum+combined_zs_raw[row]        
 
 #now do the conversion from angle to pixel location
+print(' ')
+print('Blink Stats')
+print('percent time blinking')
+print(sum(blinking)/len(blinking)*100)
+print('total time in blink')
+print(sum(blinking))
+print(' ')
+with open('blink_profile_cal.csv', 'w') as csvfile:
 
+    spamwriter=csv.writer(csvfile,lineterminator='\n')
+    
+    for i in range (0,len(blinking)):
+        spamwriter.writerow([blinking[i]])
 
 with open(output_pixel_coordinate_data_filename, 'w') as csvfile:
     spamwriter=csv.writer(csvfile,lineterminator='\n')

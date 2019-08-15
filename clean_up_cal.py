@@ -70,3 +70,11 @@ try:
     print('copied cal params')
 except:
     print('unable to copy cal params')
+
+try:
+    copyfile('blink_profile_cal.csv',path+'\\'+user_name+'_blink_profile_cal.csv')
+    print('copied cal blink profile')
+    os.remove('blink_profile_cal.csv')
+except:
+    print('unable to copy cal blink profile')
+

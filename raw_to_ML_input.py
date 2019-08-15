@@ -119,6 +119,24 @@ with open(input_raw_eye_data_filename,'r') as csvfile:
                 
             frame_nums_raw.append(math.floor(time_of_frame*frame_rate)+1)
 
+
+#now do the conversion from angle to pixel location
+print(' ')
+print('Blink Stats')
+print('percent time blinking')
+print(sum(blinking)/len(blinking)*100.0)
+print('total time in blink')
+print(sum(blinking))
+print(' ')
+with open('blink_profile.csv', 'w') as csvfile:
+
+    spamwriter=csv.writer(csvfile,lineterminator='\n')
+    
+    for i in range (0,len(blinking)):
+        spamwriter.writerow([blinking[i]])
+
+
+
     
 #go through each row and get average gaze location for each frame
 total_video_frames=frame_nums_raw[-1]
