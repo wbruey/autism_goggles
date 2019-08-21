@@ -48,6 +48,7 @@ print(principalDf)
 #now add the targets to the final dF
 finalDf = pd.concat([principalDf, df[['target']]], axis = 1)
 print(finalDf)
+bru=input('right here will!')
 
 
 
