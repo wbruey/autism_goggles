@@ -7,8 +7,8 @@ from mpl_toolkits import mplot3d
 import matplotlib.pylab as pl
 
 # list of names of people i've taken test data from`
-targets=['brian','lindsay2','seyks','william']
-num_eig_vectors=1
+targets=['brian','seyks','william','william2','amanda','lindsay','william_bad']
+num_eig_vectors=3
 
 # this is a list of arrays, each array is a 1-D vector of the test data for a particular human (convert N dimentional data to 1xN)
 list_o_gaze_datas=[]
