@@ -1,6 +1,7 @@
 import tobii_research as tr
 
 import time
+import os
 
 import csv
 
@@ -31,7 +32,9 @@ def gaze_data_callback(gaze_data):
 
 my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
 
-time.sleep(5)
+os.system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\man.avi -fs -autoexit")
+
+time.sleep(109)
 
 my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
 
