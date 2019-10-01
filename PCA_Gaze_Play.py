@@ -7,8 +7,9 @@ from mpl_toolkits import mplot3d
 import matplotlib.pylab as pl
 
 # list of names of people i've taken test data from`
-targets=['brian','seyks','william','william2','amanda','lindsay','frances','maxim','autiSIM','alberta','melanie2']
+targets=['brian','seyks','william','william2','amanda','frances','maxim','autiSIM','alberta','william5']
 num_eig_vectors=2
+rows_of_data=2600
 
 # this is a list of arrays, each array is a 1-D vector of the test data for a particular human (convert N dimentional data to 1xN)
 list_o_gaze_datas=[]
@@ -20,7 +21,7 @@ for name in targets:
     gaze_data = pd.read_csv(file_name, names=['frame','left_x','left_y','right_x','right_y','combined_x','combined_y'])
     features=['combined_x','combined_y']
     #grab the data we want to be feature data and put it in a numpy array
-    gaze_samples = gaze_data.loc[:,features].values
+    gaze_samples = gaze_data.loc[1:rows_of_data,features].values
     # re-arrange the array to be 1 dimensional
     gaze_samples = gaze_samples.reshape(1,2*len(gaze_samples[:,1]),order='F')
     # add it to the list of arrays

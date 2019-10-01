@@ -1,8 +1,8 @@
-python analyze_cal.py
+python analyze_cal_tobii.py
 
 TIMEOUT 1
 
-python raw_to_ML_input_cal.py
+python raw_to_ML_input_cal_tobii.py
 
 TIMEOUT 1
 
@@ -27,4 +27,4 @@ REM TIMEOUT 1
 
 del thumb*
 
-python clean_up_cal.py
+python clean_up_cal_tobii.py

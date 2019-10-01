@@ -37,14 +37,16 @@ def gaze_data_callback(gaze_data):
 
         
         
-#define start time     
-start_time = int(round(time.time() * 1000))
+
 
 #start video
 os.system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\dotstaticsmall.mp4 -fs -autoexit")
 
 #wait for the video to start
 time.sleep(0.102)
+
+#define start time     
+start_time = int(round(time.time() * 1000))
 
 #start subscribing to data
 my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
