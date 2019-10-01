@@ -8,11 +8,13 @@ import csv
 
 found_eyetrackers = tr.find_all_eyetrackers()
 
-my_eyetracker = found_eyetrackers[0]
-print("Address: " + my_eyetracker.address)
-print("Model: " + my_eyetracker.model)
-print("Name (It's OK if this is empty): " + my_eyetracker.device_name)
-print("Serial number: " + my_eyetracker.serial_number)
+for i in range(0,len(found_eyetrackers)):
+    my_eyetracker = found_eyetrackers[i]
+    print("Address: " + my_eyetracker.address)
+    print("Model: " + my_eyetracker.model)
+    print("Name (It's OK if this is empty): " + my_eyetracker.device_name)
+    print("Serial number: " + my_eyetracker.serial_number)
+
 left_xs=[]
 left_ys=[]
 
@@ -34,7 +36,7 @@ my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dicti
 
 os.system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\man.avi -fs -autoexit")
 
-time.sleep(109)
+time.sleep(5)
 
 my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
 
