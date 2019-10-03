@@ -7,8 +7,8 @@ from mpl_toolkits import mplot3d
 import matplotlib.pylab as pl
 
 # list of names of people i've taken test data from`
-targets=['brian','seyks','william','william2','amanda','frances','maxim','autiSIM','alberta','william5']
-num_eig_vectors=2
+targets=['brian','seyks','william','william2','amanda','frances','maxim','autiSIM','alberta','drew','james']
+num_eig_vectors=1
 rows_of_data=2600
 
 # this is a list of arrays, each array is a 1-D vector of the test data for a particular human (convert N dimentional data to 1xN)
