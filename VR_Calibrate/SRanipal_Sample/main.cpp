@@ -33,11 +33,13 @@ void streaming() {
 
 	int result = ViveSR::Error::WORK;
 	std::ofstream myfile;
+	//myfile.open("C:\\Users\\willb\\git_repos\\autism_goggles\\eye_gaze_data.csv");
 	myfile.open("C:\\Users\\willb\\git_repos\\autism_goggles\\eye_gaze_data_cal.csv");
 	unsigned long int gaze_time = 0;
 	unsigned int frame_seq = 0;
 	unsigned __int64 now = 0;
 	unsigned __int64 movie_duration = 23000;  //dot static
+	//unsigned __int64 movie_duration = 110530;// i love you man
 	unsigned __int64 start_time = 0;
 	start_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 	unsigned __int64 time_so_far = 0;
@@ -156,6 +158,8 @@ int main() {
         else if (str == '3') {
 			int i = 0;
             if (t == nullptr) {
+				//printf("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\man.avi -fs -autoexit");
+				//i = system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\man.avi -fs -autoexit");
 				i = system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\dotstaticsmall.mp4 -fs -autoexit");
 				printf("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\dotstaticsmall.mp4 -fs -autoexit");
 				t = new std::thread(streaming);

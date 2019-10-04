@@ -1,0 +1,15 @@
+﻿  main.cpp
+C:\Users\willb\git_repos\autism_goggles\VR_Gather\include\SRanipal_EyeDataType.h(139,44): warning C4334: '<<': result of 32-bit shift implicitly converted to 64 bits (was 64-bit shift intended?)
+C:\Users\willb\git_repos\autism_goggles\VR_Gather\include\SRanipal_EyeDataType.h(211,5): warning C4091: 'typedef ': ignored on left of 'ViveSR::anipal::Eye::CombinedEyeData' when no variable is declared
+C:\Users\willb\git_repos\autism_goggles\VR_Gather\SRanipal_Sample\main.cpp(64,11): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+C:\Users\willb\git_repos\autism_goggles\VR_Gather\SRanipal_Sample\main.cpp(64,11): message : consider using '%lld' in the format string
+C:\Users\willb\git_repos\autism_goggles\VR_Gather\SRanipal_Sample\main.cpp(64,11): message : consider using '%Id' in the format string
+C:\Users\willb\git_repos\autism_goggles\VR_Gather\SRanipal_Sample\main.cpp(64,11): message : consider using '%I64d' in the format string
+  SRanipal_Sample.vcxproj -> C:\Users\willb\git_repos\autism_goggles\VR_Gather\x64\Debug\SRanipal_Sample.exe
+  ..\bin\libHTC_License.dll
+  ..\bin\nanomsg.dll
+  ..\bin\SRanipal.dll
+  ..\bin\SRWorks_Log.dll
+  ..\bin\ViveSR_Client.dll
+          5 file(s) copied.
+          1 file(s) copied.
