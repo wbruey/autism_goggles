@@ -45,14 +45,19 @@ except:
     # print('unable to copy cal params pickle file')
 
 try:
-    copyfile('test_i_love_you_man.mp4',path+'\\'+user_name+'_test_i_love_you_man.mp4')
-    print('successfully coppied i love you man test video')
-    os.remove('test_i_love_you_man.mp4')
+    copyfile('test_mom.mp4',path+'\\'+user_name+'_test_mom.mp4')
+    #copyfile('test_test_i_love_you_man.mp4',path+'\\'+user_name+'_test_i_love_you_man.mp4')
+    print('successfully coppied mom test video')
+    #print('successfully coppied i love you man test video')
+    os.remove('test_mom.mp4')
+    #os.remove('test_i_love_you_man.mp4')
 except:
-    print('unable to copy test i love you man video')
+    print('unable to copy test mom video')
+    #print('unable to copy test man video')
 
 try:    
-    os.remove('man_soundless.mp4')
+    os.remove('mom_soundless.mp4')
+    #os.remove('man_soundless.mp4')
     print('deleted soundless version')
 except:
     print('unable to delete soundless version')

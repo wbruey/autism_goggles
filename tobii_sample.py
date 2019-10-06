@@ -4,7 +4,8 @@ import os
 import csv
 
 eye_tracker_serial_number='IS404-100108640431'
-
+movie_duration=185  #mom test video seconds
+#movie_duration=112  #i love you man video
 found_eyetrackers = tr.find_all_eyetrackers()
 
 for i in range(0,len(found_eyetrackers)):
@@ -40,7 +41,8 @@ def gaze_data_callback(gaze_data):
 
 
 #start video
-os.system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\man.avi -fs -autoexit")
+os.system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\mom.mp4 -fs -autoexit")
+#os.system("start C:\\ffmpeg\\bin\\ffplay C:\\Users\\willb\\git_repos\\autism_goggles\\man.avi -fs -autoexit")
 
 #wait for the video to start
 time.sleep(0.102)
@@ -52,7 +54,7 @@ start_time = int(round(time.time() * 1000))
 my_eyetracker.subscribe_to(tr.EYETRACKER_GAZE_DATA, gaze_data_callback, as_dictionary=True)
 
 #sleep while gathering data and video is playing
-time.sleep(111)
+time.sleep(movie_duration)
 
 #unsubscribe from eye tracker
 my_eyetracker.unsubscribe_from(tr.EYETRACKER_GAZE_DATA, gaze_data_callback)
