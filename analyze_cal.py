@@ -14,9 +14,9 @@ import pickle
 
 
 ##CONSTANTS THAT DEFINE THE VIDE0 AND EYE GAZE PARAMS##################
-frame_rate=23.975
-video_rez_x=1280
-video_rez_y=720
+frame_rate=23.975 #man
+video_rez_x=1280 #man
+video_rez_y=720 #man
 
 input_raw_eye_data_filename='eye_gaze_data_cal.csv'
 ########################################################################

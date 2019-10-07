@@ -14,11 +14,11 @@ import pickle
 
 ##CONSTANTS THAT DEFINE THE VIDE0 AND EYE GAZE PARAMS##################
 #frame_rate=23.975
-#video_rez_x=1280
-#video_rez_y=720
+video_rez_x=1280
+video_rez_y=720
 frame_rate=30.00
-video_rez_x=1920
-video_rez_y=1080
+#video_rez_x=1920
+#video_rez_y=1080
 
 theta_max_angle=0.6  #0.544907   #.535  (left side of screen)
 theta_min_angle=-0.616058  #-.574  (right side of screen)
