@@ -1,0 +1,49 @@
+main.cpp movie duration in milliseconds.
+main.cpp movie filename in both the system start command and in the printf for awareness command
+
+(rebuild)
+
+analyze_cal_tobii.py x, y resolution and frame rate
+analyze_cal.py x, y resolution and frame rate
+ACTUALLY ANALYZE CAL WONT WORK BECAUSE THE REZ DIFERENCE IS A TRANSFORMAITION SO RIGHT NOW I THINK THE CAL VIDEO REZ AND THE REAL VIDEO REZ NEED TO BE THE SAME
+
+tobii_sample.py movie duration in seconds
+tobii_sample.py movie filename in os.system function for starting the video
+
+raw_to_ML_input_tobii.py frame rate
+raw_to_ML_input_tobii.py video rez (x and y)
+
+raw_to_ML_input.py frame rate
+raw_to_ML_input.py video rez (x and y)
+
+layer_images.py total frame count 
+
+man_audio.mp3 -> change to new audio track filename
+
+clean_up_tobii.py  name of video file getting coppied over (twice in copyfile command).
+clean_up_tobii.py  name of video file getting deleted in os.remove command
+clean_up_tobii.py  name of video file getting coppied over in two print commands
+clean_up_tobii.py  name of soundless video file getting deleted.
+
+clean_up.py  name of video file getting coppied over (twice in copyfile command).
+clean_up.py  name of video file getting deleted in os.remove command
+clean_up.py  name of video file getting coppied over in two print commands
+clean_up.py  name of soundless video file getting deleted.
+
+clean_data_tobii.bat name of video file getting disected into jpegs
+clean_data_tobii.bat frame rate, resolution, and soundless movie name version while reassembling jpegs
+clean_data_tobii.bat name of soundless version, audio track input, and output video name
+
+clean_data.bat name of video file getting disected into jpegs
+clean_data.bat frame rate, resolution, and soundless movie name version while reassembling jpegs
+clean_data.bat name of soundless version, audio track input, and output video name
+
+PCA_Gaze_Play.py rows of data
+PCA_Gaze_Play.py names of training data
+
+
+
+
+
+
+
