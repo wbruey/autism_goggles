@@ -7,15 +7,15 @@ from mpl_toolkits import mplot3d
 import matplotlib.pylab as pl
 
 # list of names of people i've taken test data from`
-#targets=['brian','seyks','william','amanda','frances','maxim','autiSIM','alberta','drew','james','mattA','meatball','dad','mom2','dadtobii'] #i love you man
-targets=[] #mom test video
+targets=['brian','william','amanda','frances','billy','alberta','drew','james','mattA'] #i love you man
+#targets=[] #mom test video
 
 
-num_eig_vectors=2
+num_eig_vectors=1
 
 
-#rows_of_data=2600 #i love you man
-rows_of_data= #mom.mp4
+rows_of_data=2600 #i love you man
+#rows_of_data= #mom.mp4
 
 # this is a list of arrays, each array is a 1-D vector of the test data for a particular human (convert N dimentional data to 1xN)
 list_o_gaze_datas=[]
@@ -73,7 +73,7 @@ if num_eig_vectors==1 or num_eig_vectors==2:
 else:
     ax= plt.axes(projection='3d')
 
-ax.set_xlabel('Principal Component 1', fontsize = 15)
+ax.set_xlabel('Autism Index', fontsize = 15)
 if num_eig_vectors==2 or num_eig_vectors==3:
     ax.set_ylabel('Principal Component 2', fontsize = 15)
 if num_eig_vectors==3:
