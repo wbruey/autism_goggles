@@ -7,25 +7,17 @@ from mpl_toolkits import mplot3d
 import matplotlib.pylab as pl
 
 # list of names of people i've taken test data from`
-<<<<<<< HEAD
-targets=['brian','william','amanda','frances','billy','alberta','drew','james','mattA'] #i love you man
-#targets=[] #mom test video
-=======
 #targets=['brian','seyks','william','amanda','frances','maxim','autiSIM','alberta','drew','james','mattA','meatball','dad','mom2','dadtobii'] #i love you man
 targets=['saraganz','brayden','jackson','emme_monitor'] #mom test video
->>>>>>> d75c3717c520070f15ec50e712196fef6fc619fa
+
 
 
 num_eig_vectors=1
 
 
-<<<<<<< HEAD
-rows_of_data=2600 #i love you man
-#rows_of_data= #mom.mp4
-=======
 #rows_of_data=2600 #i love you man
 rows_of_data=5400 #mom.mp4
->>>>>>> d75c3717c520070f15ec50e712196fef6fc619fa
+
 
 # this is a list of arrays, each array is a 1-D vector of the test data for a particular human (convert N dimentional data to 1xN)
 list_o_gaze_datas=[]
