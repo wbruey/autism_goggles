@@ -9,12 +9,12 @@ import matplotlib.pylab as pl
 # list of names of people i've taken test data from`
 #targets=['brian','seyks','william','amanda','frances','maxim','autiSIM','alberta','drew','james','mattA','meatball','dad','mom2','dadtobii'] #i love you man
 #targets=['saraganz','brayden','jackson','emme_monitor'] #mom test video
-targets=['elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','tara_grescara_vr','brylnee_vr','briana_vr','randy_ctc_vr','mikekirchner']
+targets=['leah_vr','will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','briana_vr','tiera_vr','brylnee_vr','tara_grescara_vr','randy_ctc_vr']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
 
-num_eig_vectors=2
+num_eig_vectors=3
 
 
-rows_of_data=2600 #i love you man
+#rows_of_data=2600 #i love you man
 rows_of_data=5400 #mom.mp4
 
 
