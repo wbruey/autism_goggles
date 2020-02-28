@@ -13,10 +13,10 @@ import matplotlib.pylab as pl
 
 targets=['will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','briana_vr','tiera_vr','brylnee_vr','tara_grescara_vr']#,'randy_ctc_vr','jackson','emme']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
 colors = pl.cm.jet(np.linspace(0,1,len(targets)))
-ASD=[0.0,0.0,0.5,1.0]
-TD=[0.5,0.0,0.0,1.0]
-targets=['leah_vr','will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','briana_vr','tiera_vr','brylnee_vr','tara_grescara_vr','randy_ctc_vr','jackson','emme']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
-colors=[     ASD,         ASD,          ASD,       ASD,       ASD,        ASD,          TD,         TD,        TD,          TD          ]#,          TD,          ASD,  TD]
+TD=[0.0,1.0,0.5,1.0]
+ASD=[0.5,0.0,0.0,1.0]
+targets=['leah_vr','will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','briana_vr','tiera_vr','brylnee_vr','tara_grescara_vr','emme']#,'randy_ctc_vr','jackson','emme']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
+colors=[     ASD,         ASD,          ASD,       ASD,       ASD,        ASD,          TD,         TD,        TD,          TD     ,   TD      ,         TD]#,          TD,          ASD,  TD]
 
 num_eig_vectors=2
 
