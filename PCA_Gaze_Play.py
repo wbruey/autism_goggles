@@ -89,12 +89,8 @@ for target, color in zip(targets,colors):
     elif num_eig_vectors==2:
         ax.plot(finalDf.loc[indicesToKeep,'principal component 1'],finalDf.loc[indicesToKeep,'principal component 2'],'o',color=color)
     else:   
-        ax.plot(finalDf.loc[indicesToKeep,'principal component 1'],finalDf.loc[indicesToKeep,'principal component 2'],finalDf.loc[indicesToKeep,'principal component 3'],'o',color=color)
-    
-    #
-    #
-    #ax.scatter(finalDf.loc[indicesToKeep, 'principal component 1']
-    #           , finalDf.loc[indicesToKeep, 'principal component 2']
+        #ax.plot(finalDf.loc[indicesToKeep,'principal component 1'],finalDf.loc[indicesToKeep,'principal component 2'],finalDf.loc[indicesToKeep,'principal component 3'],'o',color=color)
+        ax.scatter(finalDf.loc[indicesToKeep, 'principal component 1'], finalDf.loc[indicesToKeep, 'principal component 2'],finalDf.loc[indicesToKeep,'principal component 3'],marker='o',color=color)
     #           , c = color
     #           , s = 50)
 ax.legend(targets)
