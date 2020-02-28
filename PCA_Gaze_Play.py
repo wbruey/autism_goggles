@@ -9,9 +9,16 @@ import matplotlib.pylab as pl
 # list of names of people i've taken test data from`
 #targets=['brian','seyks','william','amanda','frances','maxim','autiSIM','alberta','drew','james','mattA','meatball','dad','mom2','dadtobii'] #i love you man
 #targets=['saraganz','brayden','jackson','emme_monitor'] #mom test video
-targets=['leah_vr','will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','briana_vr','tiera_vr','brylnee_vr','tara_grescara_vr','randy_ctc_vr']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
 
-num_eig_vectors=3
+
+targets=['will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','briana_vr','tiera_vr','brylnee_vr','tara_grescara_vr']#,'randy_ctc_vr','jackson','emme']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
+colors = pl.cm.jet(np.linspace(0,1,len(targets)))
+ASD=[0.0,0.0,0.5,1.0]
+TD=[0.5,0.0,0.0,1.0]
+targets=['leah_vr','will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson_vr','briana_vr','tiera_vr','brylnee_vr','tara_grescara_vr','randy_ctc_vr','jackson','emme']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
+colors=[     ASD,         ASD,          ASD,       ASD,       ASD,        ASD,          TD,         TD,        TD,          TD          ]#,          TD,          ASD,  TD]
+
+num_eig_vectors=2
 
 
 #rows_of_data=2600 #i love you man
@@ -80,7 +87,8 @@ if num_eig_vectors==2 or num_eig_vectors==3:
 if num_eig_vectors==3:
     ax.set_zlabel('Principal Component 3', fontsize = 15)
 
-colors = pl.cm.jet(np.linspace(0,1,len(targets)))
+
+
 for target, color in zip(targets,colors):
     # only keep the rows for that have this particular targets that you are plotting a particular color
     indicesToKeep = finalDf['targets'] == target
