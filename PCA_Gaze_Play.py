@@ -15,10 +15,10 @@ targets=['will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','grayson
 colors = pl.cm.jet(np.linspace(0,1,len(targets)))
 TD=[0.0,1.0,0.5,1.0]
 ASD=[0.5,0.0,0.0,1.0]
-targets=['emme','jackson','will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','tara_grescara_vr','brylnee_vr','grayson_vr','briana_vr','tiera_vr','leah_vr','randy_ctc_vr']#,'randy_ctc_vr','jackson','emme']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
-colors=[   TD,     ASD,       ASD,          ASD,       ASD,       ASD,        ASD,          TD,               TD,        TD,          TD     ,   TD      ,   ASD       ,   TD]#,          TD,          ASD,  TD]
+targets=['emme','will_carkhuff_vr','elias_vr','sam_vr','nathan_vr','hudson_vr','tara_grescara_vr','brylnee_vr','grayson_vr','briana_vr','tiera_vr','leah_vr']#,'randy_ctc_vr','jackson','emme']#'randy_ctc_vr','mikekirchner'] #'alex_carkhuff_vr',
+colors=[   TD,        ASD,          ASD,       ASD,       ASD,        ASD,          TD,               TD,        TD,          TD     ,   TD      ,   ASD      ]#,          TD,          ASD,  TD]
 
-num_eig_vectors=3
+num_eig_vectors=2
 
 
 #rows_of_data=2600 #i love you man
